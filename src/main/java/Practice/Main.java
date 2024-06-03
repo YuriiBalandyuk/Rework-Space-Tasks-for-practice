@@ -16,7 +16,7 @@ public class Main {
         boolean nextTry = false;
 
         while (!nextTry){
-            int numberEntered = writingNumber.writingNumber();
+            long numberEntered = writingNumber.writingNumber();
             checkingNumber.getCheckingNumber(numberEntered);
 
             int choiceNumber = chosenNumber();
@@ -29,7 +29,7 @@ public class Main {
         }
     }
 
-    public static int chosenNumber(){
+    public static int chosenNumber() throws NumberFormatException{
         boolean nextTry = false;
         int choiceNumber = 0;
 
