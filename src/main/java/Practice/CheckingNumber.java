@@ -1,58 +1,31 @@
 package Practice;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 public class CheckingNumber {
-    public void getCheckingNumber(int numberEntered){
-        WritePrimeNumberFast writePrimeNumberFast = new WritePrimeNumberFast();
-
-        List<Integer> primesNumber = writePrimeNumberFast.getSearchedNumber(100);
-        List<Integer> primesNumber1 = notPrimeNumber(100);
-
-        if(numberEntered == 0 || numberEntered == 1){
+    public void getCheckingNumber(long numberEntered) {
+        if (isPrime(numberEntered)) {
             System.out.println("===========================================");
-            System.out.print("This number is not prime!\n");
-        }
-
-        for(int i : primesNumber){
-            if(numberEntered == i){
-                System.out.println("===========================================");
-                System.out.print("This number is prime!\n");
-                break;
-            }
-        }
-
-        for(int i : primesNumber1){
-            if(numberEntered == i){
-                System.out.println("===========================================");
-                System.out.print("This number is not prime!\n");
-                break;
-            }
+            System.out.println(numberEntered + " is a prime number!");
+        } else {
+            System.out.println("===========================================");
+            System.out.println(numberEntered + " is not a prime number!");
         }
     }
 
-    public List<Integer> notPrimeNumber(int size){
-
-        boolean[] arrayNumber = new boolean[size];
-
-        Arrays.fill(arrayNumber,false);
-        arrayNumber[0] = true;
-        arrayNumber[1] = true;
-
-        for (int i = 2; i < arrayNumber.length; i++) {
-            for (int j = 2; i * j < arrayNumber.length; j++) {
-                arrayNumber[i * j] = true;
+    public boolean isPrime(long gotNumber) {
+        if (gotNumber <= 1) { // If your number is
+            return false;
+        }
+        if (gotNumber <= 3) {
+            return true;
+        }
+        if (gotNumber % 2 == 0 || gotNumber % 3 == 0) {
+            return false;
+        }
+        for (long i = 5; i * i <= gotNumber; i += 6) {
+            if (gotNumber % i == 0 || gotNumber % (i + 2) == 0) {
+                return false;
             }
         }
-
-        List<Integer> listForNotPrimeNumbers = new ArrayList<>();
-        for (int i = 2; i < arrayNumber.length ; i++) {
-            if(arrayNumber[i]) {
-                listForNotPrimeNumbers.add(i);
-            }
-        }
-        return listForNotPrimeNumbers;
+        return true;
     }
 }
