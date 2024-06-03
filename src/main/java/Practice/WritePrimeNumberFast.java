@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class WritePrimeNumberFast {
+
     public List<Integer> getSearchedNumber(int size){
         boolean[] arrayNumber = new boolean[size];
 
