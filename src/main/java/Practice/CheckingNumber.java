@@ -1,7 +1,7 @@
 package Practice;
 
 public class CheckingNumber {
-    public void getCheckingNumber(long numberEntered) {
+    public void getCheckingNumber(long numberEntered) throws IllegalArgumentException{
         if (isPrime(numberEntered)) {
             System.out.println("===========================================");
             System.out.println(numberEntered + " is a prime number!");
@@ -12,7 +12,7 @@ public class CheckingNumber {
     }
 
     public boolean isPrime(long gotNumber) {
-        if (gotNumber <= 1) { // If your number is
+        if (gotNumber <= 1) {
             return false;
         }
         if (gotNumber <= 3) {

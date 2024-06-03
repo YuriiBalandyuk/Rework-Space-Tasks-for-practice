@@ -6,10 +6,18 @@ package Practice;
 
 import java.util.Scanner;
 
+/* Потрібно написати програму, яка перевірить вхідне число чи воно є простим. Доступна, .jar, (.git - прогрес відстеження),
+перевірка стрічки(Exception Math, char, String), обмеження розрядності (+-?) 10^12, оптимізація коду (реалізація, як найкраще)
+  gitHub - гілка, readMe, реліз з jar, тести */
+
+
+import java.util.IllegalFormatException;
+import java.util.Scanner;
+
 public class Main {
     static Scanner scanner = new Scanner(System.in);
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IllegalFormatException {
         WritingNumber writingNumber = new WritingNumber();
         CheckingNumber checkingNumber = new CheckingNumber();
 
